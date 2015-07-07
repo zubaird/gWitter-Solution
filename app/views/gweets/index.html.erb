@@ -1,0 +1,8 @@
+<% @gweets.each do |gweet| %>
+Created: <%= gweet.created_at %>
+<p>
+	<p><%= gweet.content  %></p>
+by <%= gweet.user.username  %> 
+</p>
+<hr>
+<% end %>

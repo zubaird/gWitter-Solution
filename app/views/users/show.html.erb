@@ -1,0 +1,17 @@
+<h3>This is <%= @user.username %>'s page!</h3>
+email: <%= @user.email %>
+avatar: <%= image_tag(@user.avatar_url, class: "thumbnail small") %>
+
+<%= form_for([@user, @gweet]) do |f| %>
+		gWeet:
+		<%= f.text_area :content %> 
+		<%= f.submit  %>
+<% end %>
+
+<p>
+	<h2>My gWeets:</h2>
+	<% @gweets.each do |gweet| %>
+	<p><%= gweet.content %></p>
+	<% end  %>
+</p>
+
