@@ -2,11 +2,16 @@ Rails.application.routes.draw do
 
   root "static_pages#home"
 
+  get '/signin' => 'sessions#new'
+  post '/signin' => 'sessions#create'
+  get '/signout' => 'sessions#destroy'
+
   get 'users' => 'users#index'
   get "gweets" => 'gweets#index'
   get 'users/:id' => 'users#show', as: :user_show
   get 'users/:id/gweets' => 'gweets#new', as: :user_gweets
   post 'users/:id/gweets' => 'gweets#create'
+  post 'users' => 'users#create'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

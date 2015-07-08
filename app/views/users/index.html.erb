@@ -1,5 +1,7 @@
 <h2>Index of all the users</h2>
 
+<h4><%= link_to 'Home', root_path %></h4>
+
 <% @users.each do |user| %>
 
   <p><%= link_to user.username, user_show_path(user) %> | <%= user.email %></p>
